@@ -60,6 +60,13 @@ function PrefManager() {
   for (let s of this.split(gConversationsPrefs.getCharPref("monospaced_senders")))
     this.monospaced_senders[s] = null;
 
+  // This is a hashmap
+  this.bugzilla_apis = {};
+  for (let s of this.split(gConversationsPrefs.getCharPref("bugzilla_apis"))) {
+    let x = s.split("=>");
+    this.bugzilla_apis[x[0]] = x[1];
+  }
+  
   this.watchers = [];
 
   this.register();
@@ -119,6 +126,9 @@ PrefManager.prototype = {
         for (let s of this.split(gConversationsPrefs.getCharPref("monospaced_senders")))
           this.monospaced_senders[s] = null;
         break;
+
+    case"bugzilla_apis":
+        this.bugzilla_apis = {}
     }
   },
 

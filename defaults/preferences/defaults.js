@@ -15,3 +15,5 @@ pref("conversations.extra_attachments", false);
 pref("conversations.compose_in_tab", true);
 pref("conversations.unwanted_recipients", "{}");
 pref("conversations.hide_sigs", false);
+pref("conversations.bugzilla_apis", "https://bugzilla.mozilla.org/=>https://api-dev.bugzilla.mozilla.org/latest/,https://landfill.bugzilla.org/bzapi_sandbox/=>https://api-dev.bugzilla.mozilla.org/test/latest/");
+

@@ -46,12 +46,7 @@ if (!("cookies" in Services)) {
                                      "nsICookieManager2");
 }
 
-let gBugzillaAPIs = {
-  "https://bugzilla.mozilla.org/":
-    "https://api-dev.bugzilla.mozilla.org/latest/",
-  "https://landfill.bugzilla.org/bzapi_sandbox/":
-    "https://api-dev.bugzilla.mozilla.org/test/latest/",
-};
+let gBugzillaAPIs = Prefs.bugzilla_apis;
 
 function addBzLink(aUrl) {
   if (gComposeSession && gComposeSession.addedBzLink)
